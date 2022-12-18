@@ -23,8 +23,17 @@ window.addEventListener('keydown', (event) => {
         case 'e':
             keys.Shift.pressed = true
             break
+        case 'Enter':
+            keys.Enter.pressed = true
+            break
+        case 'ArrowRight':
+            keys.ArrowRight.pressed = true
+            break
+        case 'ArrowLeft':
+            keys.ArrowLeft.pressed = true
+            break
     }
-    console.log(event.key)
+    //console.log(event.key)
 })
 
 
@@ -50,6 +59,15 @@ window.addEventListener('keyup', (event) => {
         case 'e':
             keys.Shift.pressed = false
             break
+        case 'Enter':
+            keys.Enter.pressed = false
+            break
+        case 'ArrowRight':
+            keys.ArrowRight.pressed = false
+            break
+        case 'ArrowLeft':
+            keys.ArrowLeft.pressed = false
+            break
     }
 })
 
@@ -65,7 +83,7 @@ PlayerSpeedRight = function(x) {
 }
 
 PlayerMove = function(x) {
-    // console.log(player.velocity.x)
+    //console.log(player.velocity.x)
     if(player.velocity.x > x){
         player.velocity.x += -1
     }

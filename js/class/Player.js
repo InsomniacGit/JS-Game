@@ -75,22 +75,20 @@ class Player extends Sprite{
         //Player collision Canvas Left and Right
         if (this.sides.left < 0){
             this.position.x = 0
-            console.log("Trop à gauche")
+            //console.log("Trop à gauche")
         } else if (this.sides.right > canvas.width){
             this.position.x = canvas.width - player.width
-            console.log("Trop à droite")
+            //console.log("Trop à droite")
         }
 
         //Player collision Canvas Bottom and Top
         if (this.sides.bottom > canvas.height){
             this.position.y = canvas.height - player.height
-            console.log("Trop bas")
+            //console.log("Trop bas")
         } else if (this.sides.top < 0){
             this.position.y = 0
-            console.log("Trop haut")
+            //console.log("Trop haut")
         }
-
-
 
 
         // Issue with the sprite changing, we lost an image in the sprite sheet
@@ -114,5 +112,4 @@ class Player extends Sprite{
 
 
     }
-
 }

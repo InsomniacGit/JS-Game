@@ -1,0 +1,40 @@
+Description:
+-Ce jeu est un jeu de Plateforme, le but est de compléter tous les niveaux et d'arriver à la fin du jeu.
+-Pour cela on contôle un personnage avec une seule animation quit doit sauter sur les plateformes tout
+en évitant les pièges.
+- Notre jeu est composé de 10 levels en plus d'un level Tutorial.
+
+
+Gameplay:
+-Les blocs verts correspondent à des plateformes sur lesquelles on peut marcher.
+-Les blocs bleus correspondent à des pièges au contact desquelles le personnage meurt.
+-Une zone jaune correspond à une zone qui doit être dévérouillé par une clef.
+-L'entité rose correspond à la récupération d'un Dash.
+-L'entité rouge correspond à la fin du niveau.
+-L'entité jaune correspond à une clef pour débloquer une autre partie du niveau.
+
+
+Commandes:
+-Z pour sauter.
+-Q et D pour se déplacer.
+-A + (Q ou D) pour Dash.
+-R pour reset le niveau.
+-Z + (Q ou D) contre un mur pour Wall Jump.
+-(Q ou D) contre un mur pour Wall Slide.
+
+
+
+
+Amélioration Possible
+- Créer plus de levels dont des levels avec une clef
+- Ajouter un Timer de Complétion du jeu ( donc de tous les niveaux), Timer qui serait affiché à la fin
+- Ajouter une Sauvegarde
+- Ajouter un Menu Principal
+- Ajouter des réglages de son ou de commandes
+- Ajouter plus d'animations sur le personnage
+- Ajouter des Sprites pour les Blocs et un background
+
+
+
+
+Merci d'avoir lu ce post, et merci d'avoir joué à mon jeu.

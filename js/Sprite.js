@@ -16,6 +16,7 @@ class Sprite {
         this.frameBuffer = 1
         this.slowDown = 0
     }
+    
     draw() {
         c.save()
         if (!this.loaded) return

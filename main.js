@@ -12,7 +12,8 @@ canvas.height = _HEIGHT
 
 var meter = new FPSMeter({ theme: 'light' }); // la docu: https://github.com/darsain/fpsmeter/wiki/Calling
 var autoRun = true
-var level = "0"
+var level = "00DashKey"
+var select = false
 
 const sound = new Sound()
 
@@ -38,6 +39,15 @@ const keys = {
         pressed: false
     },
     Shift: {
+        pressed: false
+    },
+    Enter: {
+        pressed: false
+    },
+    ArrowRight: {
+        pressed: false
+    },
+    ArrowLeft: {
         pressed: false
     }
 }
@@ -91,13 +101,17 @@ function animate() {
     if (keys.r.pressed) {
         player.velocity.x = 0
         player.velocity.y = 0
-        if(level === "3" || level === "4Dash" || level === "4"){
+        if(level === "03" || level === "04Dash" || level === "04"){
             player.position.x = 100
             player.position.y = 500
         }
-        else if(level === "0" || level === "0Dash" || level === "0Key" || level === "0DashKey"){
+        else if(level === "00" || level === "00Dash" || level === "00Key" || level === "00DashKey"){
             player.position.x = 20
             player.position.y = 500
+        }
+        else if(level ==="10" || level === "10Dash"){
+            player.position.x = 30
+            player.position.y = 30
         }
         else{
             player.position.x = 100
@@ -110,41 +124,51 @@ function animate() {
         sound.indexSound = Math.floor(Math.random() * 5)        
         sound.playMenuingSound(sound.indexSound);
 
-        if(level == "0"){
-            level = "0DashKey"
+        if(level == "00"){
+            level = "00DashKey"
             level0DashKey()
         }
-        else if(level == "0Dash"){
-            level = "0DashKey"
+        else if(level == "00Dash"){
+            level = "00DashKey"
             level0DashKey()
         }
-        else if(level == "0Key"){
-            level = "0DashKey"
+        else if(level == "00Key"){
+            level = "00DashKey"
             level0DashKey()
         }
-        else if(level == "1"){
-            level = "1Dash"
+        else if(level == "01"){
+            level = "01Dash"
             level1Dash()
         }
-        else if(level == "4"){
-            level = "4Dash"
+        else if(level == "04"){
+            level = "04Dash"
             level4Dash()
         }
-        else if(level == "7"){
-            level = "7DashKey"
+        else if(level == "07"){
+            level = "07DashKey"
             level7DashKey()
         }
-        else if(level == "7Dash"){
-            level = "7DashKey"
+        else if(level == "07Dash"){
+            level = "07DashKey"
             level7DashKey()
         }
-        else if(level == "7Key"){
-            level = "7DashKey"
+        else if(level == "07Key"){
+            level = "07DashKey"
             level7DashKey()
+        }
+        else if(level === "09"){
+            level = "09Dash"
+            level9Dash()
+        }
+        else if(level === "10"){
+            level = "10Dash"
+            level10Dash()
         }
 
         keys.r.pressed = false
     }
+
+
 
 
     //Create a function to check if the player is on the ground
@@ -194,62 +218,274 @@ function animate() {
     }
 
 
-    if(level === "0"){
-        level0()
+    if(keys.Enter.pressed && select === true){
+        select = false
+        keys.Enter.pressed = false
+        keys.r.pressed = true
     }
-    else if(level === "0Dash"){
-        level0Dash()
+    else if(keys.Enter.pressed && select === false){
+        select = true
+        keys.Enter.pressed = false
     }
-    else if(level === "0Key"){
-        level0Key()
+
+
+    if(select === true){
+        // PopUp Menu
+        c.save();
+        c.fillStyle = 'rgba(0, 0, 0, 0.5)'
+        c.fillRect(0, 0, canvas.width, canvas.height)
+        c.restore();
+
+        //PopUp Menu Text
+        c.save();
+        c.fillStyle = 'white'
+        c.font = '30px Arial'
+        c.textAlign = 'center'
+        c.fillText('Press Enter to skip', canvas.width / 2, canvas.height / 2)
+        c.fillText('Press Arrow Right to go on the next level', canvas.width / 2, canvas.height / 2 + 50)
+        c.fillText('Press Arrow Left to go on the past level', canvas.width / 2, canvas.height / 2 + 100)
+        c.restore();
+
+        if(keys.ArrowRight.pressed){
+            if(level === "00"){
+                level = "01Dash"
+                level1Dash()
+            }
+            else if(level === "00Dash"){
+                level = "01Dash"
+                level1Dash()
+            }
+            else if(level === "00Key"){
+                level = "01Dash"
+                level1Dash()
+            }
+            else if(level === "00DashKey"){
+                level = "01Dash"
+                level1Dash()
+            }
+            else if(level === "01"){
+                level = "02"
+                level2()
+            }
+            else if(level === "01Dash"){
+                level = "02"
+                level2()
+            }
+            else if(level === "02"){
+                level = "03"
+                level3()
+            }
+            else if(level === '03'){
+                level = '04Dash'
+                level4Dash()
+            }
+            else if(level === '04'){
+                level = '05'
+                level5()
+            }
+            else if(level === '04Dash'){
+                level = '05'
+                level5()
+            }
+            else if(level === '05'){
+                level = '06'
+                level6()
+            }
+            else if(level === '06'){
+                level = '07DashKey'
+                level7DashKey()
+            }
+            else if(level === '07'){
+                level = '08'
+                level8()
+            }
+            else if(level === '07DashKey'){
+                level = '08'
+                level8()
+            }
+            else if(level === '07Key'){
+                level = '08'
+                level8()
+            }
+            else if(level === '07Dash'){
+                level = '08'
+                level8()
+            }
+            else if(level === '08'){
+                level = '09Dash'
+                level9()
+            }
+            else if (level === '09'){
+                level = '10Dash'
+                level10()
+            }
+            else if (level === '09Dash'){
+                level = '10Dash'
+                level10Dash()
+            }
+            else if (level === '10'){
+                level = '11'
+                level11()
+            }
+            else if (level === '10Dash'){
+                level = '11'
+                level11()
+            }
+
+            keys.ArrowRight.pressed = false
+            select = false
+            keys.Enter.pressed = false
+            keys.r.pressed = true
+        }
+
+        if(keys.ArrowLeft.pressed){
+            if(level === "01"){
+                level = "00Dash"
+                level0Dash()
+            }
+            else if(level === "01Dash"){
+                level = "00Dash"
+                level0Dash()
+            }
+            else if(level === "02"){
+                level = "01Dash"
+                level1Dash()
+            }
+            else if(level === "03"){
+                level = "02"
+                level2()
+            }
+            else if(level === '04'){
+                level = '03'
+                level3()
+            }
+            else if(level === '04Dash'){
+                level = '03'
+                level3()
+            }
+            else if(level === '05'){
+                level = '04Dash'
+                level4Dash()
+            }
+            else if(level === '06'){
+                level = '05'
+                level5()
+            }
+            else if(level === '07'){
+                level = '06'
+                level6()
+            }
+            else if(level === '07DashKey'){
+                level = '06'
+                level6()
+            }
+            else if(level === '07Key'){
+                level = '06'
+                level6()
+            }
+            else if(level === '07Dash'){
+                level = '06'
+                level6()
+            }
+            else if(level === '08'){
+                level = '07DashKey'
+                level7DashKey()
+            }
+            else if (level === '09'){
+                level = '08'
+                level8()
+            }
+            else if (level === '09Dash'){
+                level = '08'
+                level8()
+            }
+            else if (level === '10'){
+                level = '09Dash'
+                level9()
+            }
+            else if (level === '10Dash'){
+                level = '09Dash'
+                level9()
+            }
+            else if (level === '11'){
+                level = '10Dash'
+                level10Dash()
+            }
+
+            keys.ArrowLeft.pressed = false
+            select = false
+            keys.Enter.pressed = false
+            keys.r.pressed = true
+        }
     }
-    else if(level === "0DashKey"){
-        level0DashKey()
-    }
-    else if(level === "1"){
-        level1()
-    }
-    else if(level === "1Dash"){
-        level1Dash()
-    }
-    else if(level === "2"){
-        level2()
-    }
-    else if(level === '3'){
-        level3()
-    }
-    else if(level === '4'){
-        level4()
-    }
-    else if(level === '4Dash'){
-        level4Dash()
-    }
-    else if(level === '5'){
-        level5()
-    }
-    else if(level === '6'){
-        level6()
-    }
-    else if(level === '7'){
-        level7()
-    }
-    else if(level === '7DashKey'){
-        level7DashKey()
-    }
-    else if(level === '7Key'){
-        level7Key()
-    }
-    else if(level === '7Dash'){
-        level7Dash()
-    }
-    else if(level === '8'){
-        level8()
-    }
-    else if (level === '9'){
-        level9()
-    }
-    else if (level === '10'){
-        level10()
+    else{
+        if(level === "00"){
+            level0()
+        }
+        else if(level === "00Dash"){
+            level0Dash()
+        }
+        else if(level === "00Key"){
+            level0Key()
+        }
+        else if(level === "00DashKey"){
+            level0DashKey()
+        }
+        else if(level === "01"){
+            level1()
+        }
+        else if(level === "01Dash"){
+            level1Dash()
+        }
+        else if(level === "02"){
+            level2()
+        }
+        else if(level === '03'){
+            level3()
+        }
+        else if(level === '04'){
+            level4()
+        }
+        else if(level === '04Dash'){
+            level4Dash()
+        }
+        else if(level === '05'){
+            level5()
+        }
+        else if(level === '06'){
+            level6()
+        }
+        else if(level === '07'){
+            level7()
+        }
+        else if(level === '07DashKey'){
+            level7DashKey()
+        }
+        else if(level === '07Key'){
+            level7Key()
+        }
+        else if(level === '07Dash'){
+            level7Dash()
+        }
+        else if(level === '08'){
+            level8()
+        }
+        else if (level === '09'){
+            level9()
+        }
+        else if (level === '09Dash'){
+            level9Dash()
+        }
+        else if (level === '10'){
+            level10()
+        }
+        else if (level === '10Dash'){
+            level10Dash()
+        }
+        else if (level === '11'){
+            level11()
+        }
+
     }
     
 
@@ -268,20 +504,30 @@ function animate() {
     }
 
 
-    //display at the top left of the canvas player.cooldown.dash
     c.save()
     c.font = "20px Arial";
     if(autoRun){
-        c.fillText("Autorun activated (e)", 20, 20);
+        c.fillText("Autorun activated (e)", 20, 40);
     }
     else{
-        c.fillText("Autorun desactivated (e)", 20, 20);
+        c.fillText("Autorun desactivated (e)", 20, 40);
     }
     c.font = "20px Arial";
     if(player.cooldown.dash){
-        c.fillText("Dash available (a)", 20, 40);
+        c.fillText("Dash available (a)", 20, 60);
     }
     c.restore()
+
+
+
+    c.save()
+    c.font = "20px Arial";
+    if(level[0] != '0'){
+        c.fillText("Level " + level[0] + level[1] + " / 11", 20, 20);
+    }
+    else{
+        c.fillText("Level " + level[1] + " / 11", 20, 20);
+    }
 
 
 

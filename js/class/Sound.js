@@ -9,7 +9,7 @@ class Sound {
             loop: true,
             volume: 0.1,
             onend: function() {
-                console.log('Menuing Sound Loop Finished!');
+                //console.log('Menuing Sound Loop Finished!');
             }
         }));
 
@@ -19,7 +19,7 @@ class Sound {
             loop: true,
             volume: 0.1,
             onend: function() {
-                console.log('Menuing Sound Loop Finished!');
+                //console.log('Menuing Sound Loop Finished!');
             }
         }));
 
@@ -29,7 +29,7 @@ class Sound {
             loop: true,
             volume: 0.1,
             onend: function() {
-                console.log('Menuing Sound Loop Finished!');
+                //console.log('Menuing Sound Loop Finished!');
             }
         }));
 
@@ -39,7 +39,7 @@ class Sound {
             loop: true,
             volume: 0.1,
             onend: function() {
-                console.log('Menuing Sound Loop Finished!');
+                //console.log('Menuing Sound Loop Finished!');
             }
         }));
 
@@ -49,7 +49,7 @@ class Sound {
             loop: true,
             volume: 0.1,
             onend: function() {
-                console.log('Menuing Sound Loop Finished!');
+                //console.log('Menuing Sound Loop Finished!');
             }
         }));
 
@@ -67,7 +67,7 @@ class Sound {
             loop: false,
             volume: 0.1,
             onend: function() {
-                console.log('Jump sound finished!');
+                //console.log('Jump sound finished!');
             }
         });
 
@@ -78,7 +78,7 @@ class Sound {
             loop: false,
             volume: 1,
             onend: function() {
-                console.log('Dash sound finished!');
+                //console.log('Dash sound finished!');
             }
         });
     }
