@@ -1,0 +1,19 @@
+/* body {
+    background-color: black;
+    width: 98vw;
+    height: 95vh;
+} */
+
+body {
+    background-color: black;
+    width: 99%;
+    height: 100%;
+}
+
+canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
