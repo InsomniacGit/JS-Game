@@ -1,43 +1,32 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Animating balls and adding input fields</title>
-  <link rel="stylesheet" href="./css/styles.css">
-  <script type="module" src="./js/script.js"></script>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fpsmeter/0.3.1/fpsmeter.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
 </head>
+
 <body>
-    <h2>Mon jeu </h2>
-    <canvas id="myCanvas"  width="1800" height="800"></canvas>
-<br>
+<canvas></canvas>
 
 
-  <!-- USELESS -->
-  <!-- <div id="controls">
-    <label for="nbBalls">Number of balls: </label>
-    <input type="number" min=1 max=30 
-           value=10 id="nbBalls"
-           oninput="changeNbBalls(this.value);">
-    <p></p>
-   <label for="colorChooser">Player color: </label>
-    <input type="color" value='#FF0000'
-           oninput="changePlayerColor(this.value);" id="colorChooser">
-    <p></p>
-      <label for="selectColorOfBallToEat">Color of ball to eat: </label>
-      <select onchange="changeColorToEat(this.value);" id="selectColorOfBallToEat">
-        <option value='red'>red</option>
-        <option value='blue'>blue</option>
-        <option value='green'>green</option>
-    </select>
-    <p></p>
 
-   <label for="ballSpeed">Change ball speed: </label>
-    - <input type="range" value='1'
-             min=0.1 max=3 step=0.1
-           oninput="changeBallSpeed(this.value);"
-             id="ballSpeed"> + 
-    <p></p>
-    
-  </div> -->
+<script src="js/Sprite.js"></script>
+<script src="js/class/Player.js"></script>
+<script src="js/class/Platform.js"></script>
+<script src="js/class/Chainsaw.js"></script>
+<script src="js/class/Finish.js"></script>
+<script src="js/class/Sound.js"></script>
+<script src="js/class/DashSeed.js"></script>
+<script src="js/class/Key.js"></script>
+<script src="js/class/Door.js"></script>
+<script src="js/MovementPlayer.js"></script>
+<script src="js/Level.js"></script>
+
+
+<script src="main.js"></script>
+
 </body>
 </html>
