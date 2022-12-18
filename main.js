@@ -245,6 +245,12 @@ function animate() {
     else if(level === '8'){
         level8()
     }
+    else if (level === '9'){
+        level9()
+    }
+    else if (level === '10'){
+        level10()
+    }
     
 
 
